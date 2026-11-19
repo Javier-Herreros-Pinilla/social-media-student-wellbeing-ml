@@ -1,0 +1,7 @@
+# Datos descargados y salidas locales
+/data/origen.csv
+/outputs/
+/__pycache__/
+/tests/__pycache__/
+/.venv/
+/.pytest_cache/
