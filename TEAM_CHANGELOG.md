@@ -1,4 +1,4 @@
-# Team Change Log & Responsibility Tracker — Milestone 2 (KDD Pipeline)
+# Team Change Log & Responsibility Tracker  -  Milestone 2 (KDD Pipeline)
 
 This document serves as a shared template for tracking individual progress and documenting all changes made to the **Python Notebook** (`Entrega_2_Pipeline_KDD_EDA_Preproceso.ipynb`) and the **Technical Report** (`Entrega_2_Informe_Estado_Practica_KDD.docx`).
 
@@ -13,7 +13,7 @@ This document serves as a shared template for tracking individual progress and d
 
 | # | Member | Role | KDD Stage / Module | Deadline | Status |
 | :-: | :--- | :--- | :--- | :---: | :---: |
-| 1 | **Moataz** | Ingestion & Integration Engineer | Selection & Integration (Module 1) | Nov 20 (20:00) | ⬜ Pending |
+| 1 | **Abdelmouiz kobry** | Ingestion & Integration Engineer | Selection & Integration (Module 1) | Nov 20 (20:00) | ⬜ Pending |
 | 2 | **Ernesto** | Quality & EDA Analyst | Cleaning & Exploration (Module 2) | Nov 20 (22:00) | ⬜ Pending |
 | 3 | **Pablo** | Transformation Engineer | Preprocessing & Feature Eng. (Module 3) | Nov 21 (20:00) | ⬜ Pending |
 | 4 | **Yeni** | Data Card Architect | Reduction & Projection (Module 4) | Nov 22 (20:00) | ⬜ Pending |
@@ -23,7 +23,7 @@ This document serves as a shared template for tracking individual progress and d
 
 ---
 
-## 1. Moataz — Ingestion & Integration Engineer
+## 1. Abdelmouiz kobry  -  Ingestion & Integration Engineer
 - **KDD Stage:** Selection & Integration (Module 1)
 - **Deadline:** Nov 20 (20:00)
 
@@ -42,7 +42,7 @@ This document serves as a shared template for tracking individual progress and d
 
 ---
 
-## 2. Ernesto — Quality & EDA Analyst
+## 2. Ernesto  -  Quality & EDA Analyst
 - **KDD Stage:** Cleaning & Exploration (Module 2)
 - **Deadline:** Nov 20 (22:00)
 
@@ -62,7 +62,7 @@ This document serves as a shared template for tracking individual progress and d
 
 ---
 
-## 3. Pablo — Transformation Engineer
+## 3. Pablo  -  Transformation Engineer
 - **KDD Stage:** Preprocessing & Feature Engineering (Module 3)
 - **Deadline:** Nov 21 (20:00)
 
@@ -81,7 +81,7 @@ This document serves as a shared template for tracking individual progress and d
 
 ---
 
-## 4. Yeni — Data Card Architect
+## 4. Yeni  -  Data Card Architect
 - **KDD Stage:** Reduction & Projection (Module 4)
 - **Deadline:** Nov 22 (20:00)
 
@@ -101,7 +101,7 @@ This document serves as a shared template for tracking individual progress and d
 
 ---
 
-## 5. Javier — ML Strategist & Coordinator
+## 5. Javier  -  ML Strategist & Coordinator
 - **KDD Stage:** Mining & Final Editing (Module 5)
 - **Deadline:** Nov 23 (22:00)
 
