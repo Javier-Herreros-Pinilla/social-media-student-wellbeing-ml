@@ -1,0 +1,18 @@
+Student_ID,Age,Gender,Academic_Level,Primary_Platform,Daily_Usage_Hours,Weekend_Extra_Hours,Device_Type,Sleep_Duration_Hours,Sleep_Quality_Score,Late_Night_Usage,Social_Comparison_Frequency,Perceived_Stress_Score,Mental_Health_Index,Academic_Performance_GPA,Overall_Impact
+STU_2024000,19,Female,Undergraduate,Snapchat,7.5,1.5,Smartphone,5.9,2,True,Always,20.0,73,2.73,Neutral
+STU_2024001,19,Female,Undergraduate,Instagram,4.6,1.3,Smartphone,7.9,3,True,Sometimes,17.0,90,3.21,Beneficial
+STU_2024002,17,Female,High School,TikTok,10.9,1.7,Smartphone,5.2,1,True,Frequently,18.0,70,3.0,Neutral
+STU_2024003,16,Female,High School,YouTube,6.0,2.3,Tablet,7.6,4,True,Sometimes,15.0,82,3.42,Beneficial
+STU_2024004,17,Male,High School,LinkedIn,3.3,2.6,Smartphone,7.6,4,True,Never,16.0,84,3.41,Beneficial
+STU_2024005,16,Male,High School,TikTok,6.2,1.6,Smartphone,5.9,1,False,Rarely,10.0,66,3.21,Beneficial
+STU_2024006,20,Male,Undergraduate,TikTok,5.6,1.8,Smartphone,8.3,3,False,Sometimes,10.0,88,3.72,Beneficial
+STU_2024007,19,Female,Undergraduate,TikTok,1.2,2.4,Smartphone,8.1,5,False,Always,6.0,95,3.37,Beneficial
+STU_2024008,18,Female,Undergraduate,YouTube,3.3,1.8,Smartphone,6.4,2,False,Frequently,23.0,88,3.59,Beneficial
+STU_2024009,18,Female,Undergraduate,Reddit,4.7,1.7,Smartphone,7.9,2,False,Frequently,6.0,96,3.66,Beneficial
+STU_2024010,15,Female,High School,TikTok,4.4,1.9,Smartphone,5.8,2,False,Frequently,11.0,83,3.22,Beneficial
+STU_2024011,20,Male,Undergraduate,LinkedIn,7.8,1.4,Smartphone,7.2,2,True,Sometimes,17.0,76,3.08,Beneficial
+STU_2024012,19,Female,Undergraduate,TikTok,9.5,0.9,Smartphone,5.3,1,True,Always,27.0,68,3.14,Neutral
+STU_2024013,23,Non-Binary,Undergraduate,Instagram,1.9,1.2,Smartphone,8.9,5,False,Sometimes,3.0,95,3.86,Beneficial
+STU_2024014,19,Male,Undergraduate,YouTube,6.6,2.3,Tablet,5.7,3,False,Sometimes,17.0,64,2.98,Neutral
+STU_2024015,19,Female,Undergraduate,Instagram,2.6,1.2,Smartphone,7.3,4,False,Rarely,11.0,85,3.57,Beneficial
+STU_2024016,18,Male,Undergraduate,X (Twitter),2.3,1.8,Tablet,6.4,2,True,Sometimes,17.0,84,3.64,Beneficial
