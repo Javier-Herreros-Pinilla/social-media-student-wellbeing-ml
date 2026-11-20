@@ -56,7 +56,7 @@ This document serves as a shared template for tracking individual progress and d
   - [ ] Sections 2.1 and 2.4 (~1.5 pages): Quality audit, retention criteria for extreme clinical profiles, and multi-panel Figure 1 (300 DPI).
 
 ### Change Log
-| Date (YYYY-MM-DD) | Files Modified | Summary of Changes | Notes / Handoff |
+| 2026-11-20 | Entrega_2_Pipeline_KDD_EDA_Preproceso.ipynb, Entrega_2_Informe_Estado_Practica_KDD.docx, Figura_1_EDA_H1.png | Completed Module 2 using the normalized Module 1 data. Audited 4,500 records, found no exact duplicates or 24-hour rule violations, and flagged 88 of 4,369 complete records with LOF. Updated sections 2.1 and 2.4 and exported Figure 1 at 300 DPI. | The new analysis uses df_base. Modules 3 and 4 still use the earlier df_integrated pipeline. The new LOF flag includes GPA in its calculation and is for exploratory analysis only. |
 | :--- | :--- | :--- | :--- |
 | *YYYY-MM-DD* | *e.g. `.ipynb`, `.docx`* | *Describe the changes made...* | *Any blockers or notes for Module 3* |
 
