@@ -15,7 +15,7 @@ This document serves as a shared template for tracking individual progress and d
 | :-: | :--- | :--- | :--- | :---: | :---: |
 | 1 | **Abdelmouiz kobry** | Ingestion & Integration Engineer | Selection & Integration (Module 1) | Nov 20 (20:00) | ⬜ Pending |
 | 2 | **Ernesto** | Quality & EDA Analyst | Cleaning & Exploration (Module 2) | Nov 20 (22:00) | ⬜ Pending |
-| 3 | **Pablo** | Transformation Engineer | Preprocessing & Feature Eng. (Module 3) | Nov 21 (20:00) | ⬜ Pending |
+| 3 | **Pablo** | Transformation Engineer | Preprocessing & Feature Eng. (Module 3) | Nov 21 (20:00) | ✅ Completed |
 | 4 | **Yeni** | Data Card Architect | Reduction & Projection (Module 4) | Nov 22 (20:00) | ⬜ Pending |
 | 5 | **Javier** | ML Strategist & Coordinator | Mining & Final Editing (Module 5) | Nov 23 (22:00) | ⬜ Pending |
 
@@ -68,16 +68,16 @@ This document serves as a shared template for tracking individual progress and d
 
 ### Assigned Tasks
 - **Python Notebook (`.ipynb`)**
-  - [ ] Compute aggregations (`Weekly_Total_Hours`, `Weekend_Binge_Ratio`) and H1 indices (`DSDI`, `CWU`, `Relative_Usage_Delta`).
-  - [ ] Discretize PSS using Cohen's clinical thresholds.
-  - [ ] Implement One-Hot Encoding (OHE) and dual scaling (Z-score / Min-Max).
+  - [X] Compute aggregations (`Weekly_Total_Hours`, `Weekend_Binge_Ratio`) and H1 indices (`DSDI`, `CWU`, `Relative_Usage_Delta`).
+  - [X] Discretize PSS using Cohen's clinical thresholds.
+  - [X] Implement One-Hot Encoding (OHE) and dual scaling (Z-score / Min-Max).
 - **Word Report (`.docx`)**
-  - [ ] Sections 2.2 and 2.3 (~1.0 page): Mathematical formulation of synthetic variables, derived attributes table, and justification for dual scaling.
+  - [X] Sections 2.2 and 2.3 (~1.0 page): Mathematical formulation of synthetic variables, derived attributes table, and justification for dual scaling.
 
 ### Change Log
 | Date (YYYY-MM-DD) | Files Modified | Summary of Changes | Notes / Handoff |
 | :--- | :--- | :--- | :--- |
-| *YYYY-MM-DD* | *e.g. `.ipynb`, `.docx`* | *Describe the changes made...* | *Any blockers or notes for Module 4* |
+| 2026-11-21 | Entrega_2_Pipeline_KDD_EDA_Preproceso.ipynb, Entrega_2_Informe_Estado_Practica_KDD.docx | Module 3 rebuilt on the real data (df_base): aggregations, DSDI, CWU and clinical PSS tiers (52.69% low, 41.22% moderate, 5.07% high, 1.02% NaN). Removed Relative_Usage_Delta and GPA_Cohort_Delta (they depend on aggregated INE/SIIU means). Added One-Hot encoding (14 columns), stratified 70/30 split, median imputation and Z-score/Min-Max scaling, all fitted on train only (X_train/X_test, X_train_z/X_test_z, X_train_mm/X_test_mm, y_clf_*, y_reg_*; 29 features). Rewrote sections 2.2 and 2.3 of the report with real figures. | For Module 4: the split and scaling are now done in my cell; please reuse those variables instead of repeating them. INE_Benchmark_*, Expected_Cohort_GPA, ESTUDES_Risk_Prior, Relative_Usage_Delta and LOF_Outlier_Flag are not in the feature set; remove them from your column list. Class balance in train: Beneficial 81.8%, Neutral 14.5%, Negative 3.7%, so use Macro F1 and stratification. |
 
 ---
 
