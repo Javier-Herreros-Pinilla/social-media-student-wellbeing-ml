@@ -87,17 +87,17 @@ This document serves as a shared template for tracking individual progress and d
 
 ### Assigned Tasks
 - **Python Notebook (`.ipynb`)**
-  - [ ] Compute Mutual Information and Random Forest feature importance.
-  - [ ] Fit PCA (13 PCs >= 85.4% variance).
-  - [ ] Execute stratified 70/30 Holdout split + 10-fold CV without data leakage.
-  - [ ] Export `tarjeta_datos_consolidada_H2.csv`.
+  - [X] Compute Mutual Information and Random Forest feature importance.
+  - [X] Fit PCA (13 PCs >= 85.4% variance).
+  - [X] Execute stratified 70/30 Holdout split + 10-fold CV without data leakage.
+  - [X] Export `tarjeta_datos_consolidada_H2.csv`.
 - **Word Report (`.docx`)**
-  - [ ] Section 3 (~1.0 page): Data Card technical sheet (31 predictors + 2 targets), table by functional blocks, and Figure 2 (PCA and ranking).
+  - [X] Section 3 (~1.0 page): Data Card technical sheet (31 predictors + 2 targets), table by functional blocks, and Figure 2 (PCA and ranking).
 
 ### Change Log
 | Date (YYYY-MM-DD) | Files Modified | Summary of Changes | Notes / Handoff |
 | :--- | :--- | :--- | :--- |
-| 2026-11-22 | *e.g. `.ipynb`, `.docx`, `.csv`* | *Describe the changes made...* | *Any blockers or notes for Module 5* |
+| 2026-11-22 | Entrega_2_Pipeline_KDD_EDA_Preproceso.ipynb, Entrega_2_Informe_Estado_Practica_KDD.docx, Figura_2_PCA_Ranking.png  | *Describe the changes made...* | *Any blockers or notes for Module 5* |
 
 ---
 
