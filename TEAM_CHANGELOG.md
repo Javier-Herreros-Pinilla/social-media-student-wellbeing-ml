@@ -97,7 +97,7 @@ This document serves as a shared template for tracking individual progress and d
 ### Change Log
 | Date (YYYY-MM-DD) | Files Modified | Summary of Changes | Notes / Handoff |
 | :--- | :--- | :--- | :--- |
-| *YYYY-MM-DD* | *e.g. `.ipynb`, `.docx`, `.csv`* | *Describe the changes made...* | *Any blockers or notes for Module 5* |
+| 2026-11-22 | *e.g. `.ipynb`, `.docx`, `.csv`* | *Describe the changes made...* | *Any blockers or notes for Module 5* |
 
 ---
 
