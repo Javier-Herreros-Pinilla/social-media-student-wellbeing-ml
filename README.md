@@ -37,10 +37,10 @@ flowchart LR
 
 | Módulo | Fase KDD | Descripción clave |
 | :---: | :--- | :--- |
-| **0** | **Configuración e Ingesta** | Carga reproducible del dataset base ($N = 4.500$, $d = 16$) con semilla fija (`RANDOM_SEED = 42`). |
-| **1** | **Selección e Integración Open Data** | Eliminación de identificadores (`Student_ID`) y enriquecimiento *Macro-to-Micro* mediante cruces *Left Join* con fuentes oficiales españolas (**INE**, **SIIU** y **OEDA-ESTUDES**). |
+| **0** | **Configuración e Ingesta** | Carga y auditoría del espejo público fijado ($N = 4.500$, $d = 16$), con rechazo de esquemas/archivos distintos y sin fallback sintético. |
+| **1** | **Selección e Integración Open Data** | Eliminación de `Student_ID`, normalización de variables y `LEFT JOIN` descriptivos INE/SIIU/ESTUDES en una vista de contexto separada, excluida del entrenamiento. |
 | **2** | **Calidad del Dato y EDA** | Auditoría de completitud y restricciones físicas ($\text{Uso} + \text{Sueño} \le 24\text{h}$), detección híbrida de anomalías (**IQR** + **LOF**) y visualización exploratoria para contrastar $H_1$. |
-| **3** | **Transformación y Feature Engineering** | Creación de variables de dominio (`Weekly_Total_Hours`, `Weekend_Binge_Ratio`, `DSDI`, `CWU`, `Relative_Usage_Delta`), discretización clínica (escala PSS de Cohen) y escalado sin fuga de datos. |
+| **3** | **Transformación y Feature Engineering** | Creación de variables (`Weekly_Total_Hours`, `Weekend_Binge_Ratio`, `DSDI`, `CWU`), categorización de PSS y preparación de 29 predictores con imputación y escalado sobre Train. |
 | **4** | **Reducción Dimensional y Tarjeta de Datos** | Selección de características (*Mutual Information* y *Random Forest*), análisis **PCA**, particionamiento estratificado (*Holdout* 70/30 + *10-fold CV*) y exportación de vistas minables. |
 | **5** | **Líneas de Trabajo Baseline** | Prototipos iniciales de **Clasificación**, **Regresión con ablación**, **Clustering fenotípico** y **Perturbaciones contrafactuales**. |
 
@@ -50,10 +50,10 @@ flowchart LR
 
 | Fuente | Tipo | Variables aportadas |
 | :--- | :--- | :--- |
-| **Impact of Social Media on Life** (`impact_of_social_media_on_life.csv`) | Dataset base (Kaggle) | Demografía, plataforma, horas de uso, sueño, comparación social, PSS, salud mental, GPA e impacto global. |
-| **INE** *(Encuesta TIC Hogares y ENSE)* | Open Data | `INE_Benchmark_Usage_Hours`, `INE_Benchmark_Sleep_Hours` |
-| **Ministerio de Universidades** *(SIIU)* | Open Data | `Expected_Cohort_GPA` |
-| **Observatorio OEDA** *(Encuesta ESTUDES)* | Open Data | `ESTUDES_Risk_Prior` |
+| **Impact of Social Media on Life** (espejo público fijado por hash; referencia original Kaggle sin identidad certificada) | Dataset base (espejo GitHub) | Demografía, plataforma, horas de uso, sueño, comparación social, PSS, salud mental, GPA e impacto global. |
+| **INE** *(Encuesta TIC Hogares 2025)* | Contexto descriptivo | `INE_Redes_Sociales_Participacion_Pct_2025` (no predictor) |
+| **Ministerio de Universidades** *(SIIU 2024/25)* | Contexto descriptivo | `SIIU_Nota_Expediente_Grado_10_2024_25` (no predictor) |
+| **Observatorio OEDA** *(Encuesta ESTUDES 2025)* | Contexto descriptivo | `ESTUDES_RRSS_Uso_Problematico_Pct_2025` (no predictor) |
 
 ---
 
@@ -85,13 +85,11 @@ pip install numpy pandas matplotlib seaborn scipy scikit-learn jupyter
 jupyter notebook Entrega_2_Pipeline_KDD_EDA_Preproceso.ipynb
 ```
 
-> **Nota sobre reproducibilidad:** Si el archivo `impact_of_social_media_on_life.csv` no está presente en el directorio local, el **Módulo 0** genera automáticamente una muestra sintética de demostración ($N = 4.500$, $d = 16$, `seed = 42`) respetando el esquema y relaciones del Hito 1, permitiendo ejecutar el pipeline de principio a fin sin errores.
+> **Reproducibilidad y procedencia:** El **Módulo 0** descarga (si falta) y valida el espejo público fijado en `modulo1_abdelmouiz_kobry/fuente_auditoria.py` (esquema y Git Blob SHA-1). Si no puede validarlo, la ejecución se interrumpe: **no genera datos sintéticos**. No se ha demostrado identidad bit a bit con el archivo original de Kaggle. Las fuentes INE/SIIU/ESTUDES son solo contexto descriptivo y no atributos de predicción.
 
 ### 3. Artefactos generados
 
-Al ejecutar el notebook completo se generan las dos vistas minables listas para modelado:
-- `tarjeta_datos_arboles.csv`  -  Vista optimizada para modelos basados en árboles.
-- `tarjeta_datos_distancias.csv`  -  Vista escalada para modelos basados en distancias y clustering.
+Al ejecutar el notebook completo se genera `tarjeta_datos_consolidada_H2.csv` con **4.500 filas y 32 columnas** (29 predictores, `Split` y dos objetivos). El archivo incluye 3.150 registros Train y 1.350 Test; conserva 85 GPA desconocidos. También se generan los resultados temporales de Módulo 1 en `modulo1_abdelmouiz_kobry/outputs/`, excluidos de Git.
 
 ---
 
@@ -102,4 +100,4 @@ Al ejecutar el notebook completo se generan las dos vistas minables listas para 
 
 ## Módulo 1: selección e integración de datos
 
-La aportación de Abdelmouiz kobry se encuentra en [`modulo1_abdelmouiz_kobry/`](modulo1_abdelmouiz_kobry/README_MODULO1.md). Incluye auditoría del CSV, selección y normalización, y comparación contextual con tres fuentes españolas. Las estadísticas agregadas NO se usan como predictores. El cuaderno compartido anterior generó datos de demostración al faltar el CSV; sus resultados deben volver a calcularse antes del informe final.
+La aportación de Abdelmouiz kobry se encuentra en [`modulo1_abdelmouiz_kobry/`](modulo1_abdelmouiz_kobry/README_MODULO1.md). Incluye auditoría del CSV, selección y normalización, y comparación contextual con tres fuentes españolas. Las estadísticas agregadas NO se usan como predictores. El notebook compartido ahora carga y valida la copia pública fijada y ejecuta el pipeline completo sin crear registros artificiales. Falta comprobar de forma independiente la identidad del espejo con la revisión original de Kaggle.
