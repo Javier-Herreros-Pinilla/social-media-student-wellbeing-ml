@@ -18,7 +18,7 @@ ESPEJO_URL = ('https://raw.githubusercontent.com/marupakanandhini269/'
 KAGGLE_REFERENCIA = 'https://www.kaggle.com/datasets/harishyadav0506/impact-of-social-media-on-life'
 GIT_BLOB_ESPERADO = '0fa68d5f03c79c51eb817d67514980d04f0cd6be'
 LONGITUD_ESPERADA = 475478
-ARCHIVO_LOCAL = Path(__file__).resolve().parent / 'data' / 'origen.csv'
+ARCHIVO_LOCAL = Path(__file__).resolve().parent.parent / 'data' / 'origen.csv'
 
 
 def git_blob_sha1(content: bytes) -> str:

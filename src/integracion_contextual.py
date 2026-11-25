@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 import pandas as pd
 
-DATOS=Path(__file__).resolve().parent/'data'
+DATOS = Path(__file__).resolve().parent.parent / 'data'
 COLUMNAS_CONTEXTO=(
  'INE_Redes_Sociales_Participacion_Pct_2025',
  'SIIU_Nota_Expediente_Grado_10_2024_25',

@@ -33,7 +33,7 @@ if __name__=='__main__':
     p=argparse.ArgumentParser(description='Prepara los datos del Modulo 1 sin sustituciones artificiales')
     p.add_argument('--descargar',action='store_true',help='Descarga y verifica el espejo publico antes de procesar')
     p.add_argument('--csv',type=Path,default=ARCHIVO_LOCAL)
-    p.add_argument('--salida',type=Path,default=Path(__file__).resolve().parent/'outputs')
+    p.add_argument('--salida',type=Path,default=Path(__file__).resolve().parent.parent/'outputs')
     args=p.parse_args()
     if args.descargar: descargar_espejo(args.csv)
     res=ejecutar(args.csv,args.salida,version_publica=args.descargar)
